@@ -1,0 +1,43 @@
+apply from: this.rootProject.file('imooc.gradle')
+
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.5.20'
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/'}
+//        google()
+//        mavenCentral()
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-releases/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-snapshots/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.3"
+        //greendao插件依赖
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

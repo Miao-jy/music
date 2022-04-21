@@ -1,0 +1,40 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/'}
+//        google()
+//        mavenCentral()
+//        jcenter() // Warning: this repository is going to shut down soon
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-releases/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://localhost:8081/repository/imooc-snapshots/'
+//            credentials {
+//                username 'admin'
+//                password 'admin123'
+//            }
+//        }
+        maven { url "https://www.jitpack.io" }
+    }
+}
+rootProject.name = "Music"
+include ':app'
+include ':lib_audio'
+include ':lib_video'
+include ':lib_commin_ui'
+include ':lib_image_loader'
+include ':lib_network'
+include ':lib_pullalive'
+include ':lib_qrcode'
+include ':lib_share'
+include ':lib_update'
+include ':lib_webview'

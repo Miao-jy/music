@@ -1,0 +1,37 @@
+ext {
+    android = [compileSdkVersion: 31,
+               buildToolsVersion: "29.0.0",
+               minSdkVersion    : 19,
+               targetSdkVersion : 31,
+               applicationId    : 'com.example.music',
+               versionCode      : 1,
+               versionName      : '1.0',
+               multiDexEnabled  : true]
+    depsVersion = [
+            appcompat      : '1.4.1',
+            design         : '1.5.0',
+            okhttp         : '3.3.0',
+            gson           : '2.8.0',
+            glide          : '4.9.0',
+            glidecompiler  : '4.9.0',
+            rxjava         : '2.2.9',
+            rxandroid      : '2.1.1',
+            greendao       : '3.3.0',
+            eventbus       : '3.1.1',
+            recyclerview   : '29.0.0'
+    ]
+
+    depsLibs = [
+            appcompat: "androidx.appcompat:appcompat:${depsVersion.appcompat}",
+            design: "com.google.android.material:material:${depsVersion.design}",
+            okhttp         : "com.squareup.okhttp3:okhttp:${depsVersion.okhttp}",
+            gson           : "com.google.code.gson:gson:${depsVersion.gson}",
+            glide          : "com.github.bumptech.glide:glide:${depsVersion.glide}",
+            glidecompiler  : "com.github.bumptech.glide:compiler:${depsVersion.glidecompiler}",
+            rxjava         : "io.reactivex.rxjava2:rxjava:${depsVersion.rxjava}",
+            rxandroid      : "io.reactivex.rxjava2:rxandroid:${depsVersion.rxandroid}",
+            greendao       : "org.greenrobot:greendao:${depsVersion.greendao}",
+            recyclerview   : 'androidx.recyclerview:recyclerview:1.0.0',
+            eventbus       : "org.greenrobot:eventbus:${depsVersion.eventbus}"
+    ]
+}

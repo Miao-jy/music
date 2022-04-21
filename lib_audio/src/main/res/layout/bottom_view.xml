@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp">
+
+        <ImageView
+            android:id="@+id/album_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/audio_name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自拍"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/album_view"/>
+
+        <TextView
+            android:id="@+id/audio_album_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="李荣浩"
+            android:textSize="14sp"
+            android:layout_alignBottom="@id/album_view"
+            android:layout_toEndOf="@+id/album_view"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/album_view" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp">
+
+        <ImageView
+            android:id="@+id/play_view"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/content_view"
+            android:src="@drawable/ic_baseline_play_arrow_24" />
+
+        <ImageView
+            android:id="@+id/content_view"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/img" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

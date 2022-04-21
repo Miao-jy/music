@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+    id 'org.greenrobot.greendao'
+}
+
+def pomVersionName = '1.0.0-SNAPSHOT'
+def pomName = this.getName()
+def pomDescription = 'the audio library for all project'
+
+
+android {
+    compileSdk this.rootProject.android.compileSdkVersion
+
+    defaultConfig {
+        minSdk this.rootProject.android.minSdkVersion
+        targetSdk this.rootProject.android.targetSdkVersion
+        versionCode this.rootProject.android.versionCode
+        versionName this.rootProject.android.versionName
+        multiDexEnabled this.rootProject.android.multiDexEnabled
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    compileOnly this.rootProject.depsLibs.appcompat
+    compileOnly this.rootProject.depsLibs.design
+    compileOnly this.rootProject.depsLibs.recyclerview
+
+    compileOnly this.rootProject.depsLibs.greendao
+    compileOnly this.rootProject.depsLibs.eventbus
+    compileOnly this.rootProject.depsLibs.rxjava
+
+    compileOnly project(':lib_image_loader')
+    compileOnly project(':lib_commin_ui')
+    compileOnly project(':lib_share')
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.core:core-ktx:+"
+}
+
+// greendao 数据库配置
+greendao {
+    schemaVersion 1
+    daoPackage 'com.example.lib_audio.mediaplayer.db'
+}
+
+//上传maven配置
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            // Creates a Maven publication called "release".
+//            release(MavenPublication) {
+//                // Applies the component for the release build variant.
+//                from components.release
+//
+//                // You can then customize attributes of the publication as shown below.
+//                groupId = POM_GROUPID
+//                artifactId = pomVersionName
+//                version = pomVersionName
+//                description = pomDescription
+//            }
+////            // Creates a Maven publication called “debug”.
+////            debug(MavenPublication) {
+////                // Applies the component for the debug build variant.
+////                from components.debug
+////
+////                groupId = 'com.example.MyLibrary'
+////                artifactId = 'final-debug'
+////                version = '1.0'
+////            }
+//        }
+//        repositories {
+//            maven {
+//                name = pomName
+//                allowInsecureProtocol = true
+//                url NEXUS_REPOSITORY_URL
+//                credentials {
+//                    username = NEXUS_USERNAME
+//                    password = NEXUS_PASSWORD
+//                }
+//            }
+//        }
+//    }
+//}
+//repositories {
+//    mavenCentral()
+//}
