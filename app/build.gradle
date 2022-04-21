@@ -47,13 +47,11 @@ dependencies {
     implementation project(path: ':lib_image_loader')
     implementation project(path: ':lib_network')
     implementation project(path: ':lib_audio')
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation "androidx.core:core-ktx:+"
+    implementation this.rootProject.depsLibs.corektx
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 //repositories {

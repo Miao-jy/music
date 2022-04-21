@@ -37,8 +37,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation this.rootProject.depsLibs.appcompat
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     compileOnly this.rootProject.depsLibs.appcompat
     compileOnly this.rootProject.depsLibs.design
@@ -55,7 +54,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation "androidx.core:core-ktx:+"
+    implementation this.rootProject.depsLibs.corektx
 }
 
 // greendao 数据库配置

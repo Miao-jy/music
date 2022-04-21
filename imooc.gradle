@@ -1,15 +1,15 @@
 ext {
-    android = [compileSdkVersion: 31,
+    android = [compileSdkVersion: 30,
                buildToolsVersion: "29.0.0",
                minSdkVersion    : 19,
-               targetSdkVersion : 31,
+               targetSdkVersion : 30,
                applicationId    : 'com.example.music',
                versionCode      : 1,
                versionName      : '1.0',
                multiDexEnabled  : true]
     depsVersion = [
-            appcompat      : '1.4.1',
-            design         : '1.5.0',
+            appcompat      : '1.3.1',
+            design         : '1.4.0',
             okhttp         : '3.3.0',
             gson           : '2.8.0',
             glide          : '4.9.0',
@@ -18,7 +18,8 @@ ext {
             rxandroid      : '2.1.1',
             greendao       : '3.3.0',
             eventbus       : '3.1.1',
-            recyclerview   : '29.0.0'
+            recyclerview   : '29.0.0',
+            corektx       :'1.6.0'
     ]
 
     depsLibs = [
@@ -32,6 +33,7 @@ ext {
             rxandroid      : "io.reactivex.rxjava2:rxandroid:${depsVersion.rxandroid}",
             greendao       : "org.greenrobot:greendao:${depsVersion.greendao}",
             recyclerview   : 'androidx.recyclerview:recyclerview:1.0.0',
-            eventbus       : "org.greenrobot:eventbus:${depsVersion.eventbus}"
+            eventbus       : "org.greenrobot:eventbus:${depsVersion.eventbus}",
+            corektx       :"androidx.core:core-ktx:${depsVersion.corektx}"
     ]
 }
