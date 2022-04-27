@@ -16,4 +16,10 @@
         android:text="我的"
         android:textSize="30sp"
         android:textColor="@color/black"/>
+
+    <com.example.music.hi.tab.bottom.HiTabItemBottom
+        android:id="@+id/hi_tab_item_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"/>
 </LinearLayout>
