@@ -7,12 +7,16 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lib_hi.util.HiDisplayUtil;
+import com.example.lib_hi.util.HiViewUtil;
 import com.example.music.R;
 import com.example.music.hi.tab.common.IHiTabLayout;
 
@@ -117,6 +121,8 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
 
         // 添加承载Item的FrameLayout
         addView(ll, llParams);
+
+        fixContentView();
     }
 
     /**
@@ -164,5 +170,27 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
 
     public void setBottomLineColor(String bottomLineColor) {
         this.bottomLineColor = bottomLineColor;
+    }
+
+    /**
+     * 修复滑动列表中最后一个Item无法展示出来
+     */
+    private void fixContentView() {
+        if (!(getChildAt(0) instanceof ViewGroup)) {
+            return;
+        }
+        ViewGroup rootView = (ViewGroup) getChildAt(0);
+        ViewGroup targetView = HiViewUtil.findTypeView(rootView, RecyclerView.class);
+        if (targetView == null) {
+            targetView = HiViewUtil.findTypeView(rootView, ScrollView.class);
+        }
+        if (targetView == null) {
+            targetView = HiViewUtil.findTypeView(rootView, AbsListView.class);
+        }
+        if (targetView != null) {
+            targetView.setPadding(0, 0, 0, HiDisplayUtil.dp2px(tabBottomHeight, getResources()));
+//            // 可以对padding位置进行绘制
+            targetView.setClipToPadding(false);
+        }
     }
 }
