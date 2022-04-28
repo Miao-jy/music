@@ -5,6 +5,10 @@ import android.graphics.Bitmap;
 import androidx.fragment.app.Fragment;
 
 public class HiTabBottomInfo<Color> {
+    public HiTabBottomInfo() {
+
+    }
+
     /**
      * 设置Color泛型，用来扩展Color可以为string或者int类型
      */

@@ -17,6 +17,7 @@ import com.example.lib_audio.mediaplayer.model.AudioBean;
 import com.example.lib_commin_ui.base.BaseActivity;
 import com.example.lib_image_loader.app.ImageLoaderManager;
 import com.example.music.R;
+import com.example.music.hi.activity.HiBottomLayoutActivity;
 import com.example.music.view.home.adapter.HomePagerAdapter;
 import com.example.music.view.home.modle.CHANNEL;
 import com.example.music.view.leafloading.LeafLoadingActivity;
@@ -103,6 +104,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         unLoginLayout = findViewById(R.id.unloggin_layout);
         unLoginLayout.setOnClickListener(this);
         mPhotoView = findViewById(R.id.avatr_view);
+        // 点击跳转到bottomLayoutDemo
+        findViewById(R.id.linkToHiBottomDemo).setOnClickListener(this);
     }
 
     // 初始化指示器
@@ -162,6 +165,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 }
             case R.id.search_view:
                 LeafLoadingActivity.start(this);
+            case R.id.linkToHiBottomDemo:
+                HiBottomLayoutActivity.start(this);
         }
     }
 

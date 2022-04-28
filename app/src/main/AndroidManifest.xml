@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.music">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".application.ImoocVoiceApplication"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Music">
+        android:theme="@style/Theme.Music"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".hi.activity.HiBottomLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_hi_bottom_layout"
+            android:theme="@style/Theme.Music.NoActionBar" />
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false" />
@@ -25,9 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.leafloading.LeafLoadingActivity">
-
-        </activity>
+        <activity android:name=".view.leafloading.LeafLoadingActivity"></activity>
     </application>
 
 </manifest>

@@ -27,6 +27,8 @@ public class HiTabItemBottom extends RelativeLayout implements IHiTabItem<HiTabB
     private TextView tabIconView;
     private TextView tabNameView;
 
+    private static final String TAG = "HiTabItemBottom";
+
     public HiTabItemBottom(Context context) {
         this(context, null);
     }

@@ -7,12 +7,16 @@
         <entry key="app/src/main/res/drawable/bg_banner.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/bg_home_tip(更多IT教程 微信535950311)_更多IT资源微信1215501310.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/bg_home_tip.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/layout/activity_hi_bottom_layout.xml" value="0.21920289855072464" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login_layout.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/content_hi_bottom_layout.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_discory_layout(更多IT教程 微信535950311)_更多IT资源微信1215501310.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/fragment_discory_layout.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/fragment_friend_layout.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/fragment_mine_layout.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/hi_bottom_layout_bg.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/hi_tab_bottom.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/item_friend_list_picture_layout.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/leaf_loading_layout.xml" value="0.23020833333333332" />

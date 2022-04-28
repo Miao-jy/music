@@ -34,6 +34,12 @@ android {
             }
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
@@ -54,6 +60,7 @@ dependencies {
     implementation project(path: ':lib_image_loader')
     implementation project(path: ':lib_network')
     implementation project(path: ':lib_audio')
+    implementation project(path: ':lib_hi')
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
