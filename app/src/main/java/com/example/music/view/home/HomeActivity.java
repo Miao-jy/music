@@ -163,10 +163,13 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 } else {
                     mDrawerLayout.closeDrawer(GravityCompat.START);
                 }
+                break;
             case R.id.search_view:
                 LeafLoadingActivity.start(this);
+                break;
             case R.id.linkToHiBottomDemo:
                 HiBottomLayoutActivity.start(this);
+                break;
         }
     }
 
