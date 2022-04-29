@@ -26,7 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTabItemBottom, HiTabBottomInfo<?>> {
-    private List<OnTabSelectedListener<HiTabBottomInfo<?>>> tabSelectedChangeListeners = new ArrayList<>();
+    private final List<OnTabSelectedListener<HiTabBottomInfo<?>>> tabSelectedChangeListeners = new ArrayList<>();
     private HiTabBottomInfo<?> selectedInfo;
     private float bottomAlpha = 1f;
     //TabBottom高度

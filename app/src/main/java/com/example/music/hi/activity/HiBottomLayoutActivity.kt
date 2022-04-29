@@ -8,11 +8,25 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityOptionsCompat
+import androidx.fragment.app.FragmentManager
 import com.example.music.R
+import com.example.music.hi.component.HiBaseFragment
+import com.example.music.hi.fragment.*
 import com.example.music.hi.tab.bottom.HiTabBottomInfo
 import com.example.music.hi.tab.bottom.HiTabBottomLayout
+import com.example.music.hi.tab.fragmentstructure.HiFragmentTabView
+import com.example.music.hi.tab.fragmentstructure.HiTabViewAdapter
 
 class HiBottomLayoutActivity : AppCompatActivity() {
+
+    private val hiTabBottomInfoList: MutableList<HiTabBottomInfo<*>> = ArrayList()
+    private val hiFragmentTabList: List<Class<out HiBaseFragment>> = arrayListOf(
+        HomePageFragment::class.java,
+        CategoryFragment::class.java,
+        FavoriteFragment::class.java,
+        ProfileFragment::class.java,
+        RecommendedFragment::class.java
+    )
 
     companion object {
         @JvmStatic
@@ -34,21 +48,23 @@ class HiBottomLayoutActivity : AppCompatActivity() {
     }
 
     private fun initBottomTabItem() {
-        val infoList: MutableList<HiTabBottomInfo<*>> = ArrayList()
         for (i in 1..5) {
-            infoList.add(
-                HiTabBottomInfo(
-                    "Item$i",  "fonts/iconfont.ttf",
-                    getString(R.string.jianbing), null,
-                    "#FF91FF3$i", "#FFd44949")
+            val info = HiTabBottomInfo(
+                "Item$i", "fonts/iconfont.ttf",
+                getString(R.string.jianbing), null,
+                "#FF91FF3$i", "#FFd44949"
             )
+            info.fragment = hiFragmentTabList[i - 1]
+            hiTabBottomInfoList.add(info)
         }
-        Log.d(TAG, "initBottomTabItemList: $infoList" )
         val hiTabBottomLayout = findViewById<HiTabBottomLayout>(R.id.hi_tab_bottom_layout_demo)
+        val hiFragmentTabView = findViewById<HiFragmentTabView>(R.id.hi_fragment_tab_view)
+        hiFragmentTabView.adapter = HiTabViewAdapter(supportFragmentManager, hiTabBottomInfoList)
         hiTabBottomLayout.setBottomAlpha(0.85F)
-        hiTabBottomLayout.addTabSelectedChangeListener { _, _, nextInfo ->
-            Toast.makeText(this@HiBottomLayoutActivity, nextInfo.name, Toast.LENGTH_SHORT).show()
+        hiTabBottomLayout.addTabSelectedChangeListener { position, _, nextInfo ->
+            hiFragmentTabView.currentItem = position
         }
-        hiTabBottomLayout.inflateInfo(infoList)
+        hiTabBottomLayout.inflateInfo(hiTabBottomInfoList)
+        hiTabBottomLayout.defaultSelected(hiTabBottomInfoList[0])
     }
 }

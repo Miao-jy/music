@@ -21,7 +21,7 @@ import java.util.List;
 
 public class HiViewUtil {
     /**
-     * 获取指定类型的子View
+     * 查看ViewGroup中指定类型的子View
      *
      * @param group viewGroup
      * @param cls   如：RecyclerView.class
