@@ -14,6 +14,7 @@ import com.example.music.hi.component.HiBaseFragment
 import com.example.music.hi.fragment.*
 import com.example.music.hi.tab.bottom.HiTabBottomInfo
 import com.example.music.hi.tab.bottom.HiTabBottomLayout
+import com.example.music.hi.tab.common.IHiTabLayout
 import com.example.music.hi.tab.fragmentstructure.HiFragmentTabView
 import com.example.music.hi.tab.fragmentstructure.HiTabViewAdapter
 
@@ -51,7 +52,7 @@ class HiBottomLayoutActivity : AppCompatActivity() {
         for (i in 1..5) {
             val info = HiTabBottomInfo(
                 "Item$i", "fonts/iconfont.ttf",
-                getString(R.string.jianbing), null,
+                getString(R.string.jianbing), getString(R.string.jianbing),
                 "#FF91FF3$i", "#FFd44949"
             )
             info.fragment = hiFragmentTabList[i - 1]
@@ -60,10 +61,19 @@ class HiBottomLayoutActivity : AppCompatActivity() {
         val hiTabBottomLayout = findViewById<HiTabBottomLayout>(R.id.hi_tab_bottom_layout_demo)
         val hiFragmentTabView = findViewById<HiFragmentTabView>(R.id.hi_fragment_tab_view)
         hiFragmentTabView.adapter = HiTabViewAdapter(supportFragmentManager, hiTabBottomInfoList)
-        hiTabBottomLayout.setBottomAlpha(0.85F)
-        hiTabBottomLayout.addTabSelectedChangeListener { position, _, nextInfo ->
-            hiFragmentTabView.currentItem = position
-        }
+        hiTabBottomLayout.bottomAlpha = 0.85F
+//        hiTabBottomLayout.addTabSelectedChangeListener { position, _, nextInfo ->
+//            hiFragmentTabView.currentItem = position
+//        }
+        hiTabBottomLayout.addTabSelectedChangeListener (object: IHiTabLayout.OnTabSelectedListener<HiTabBottomInfo<*>> {
+            override fun onTabSelectedChange(
+                index: Int,
+                prevInfo: HiTabBottomInfo<*>,
+                nextInfo: HiTabBottomInfo<*>
+            ) {
+                hiFragmentTabView.currentItem = index
+            }
+        })
         hiTabBottomLayout.inflateInfo(hiTabBottomInfoList)
         hiTabBottomLayout.defaultSelected(hiTabBottomInfoList[0])
     }

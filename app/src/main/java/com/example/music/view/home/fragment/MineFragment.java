@@ -44,7 +44,7 @@ public class MineFragment extends Fragment {
         IHiTabItem<HiTabBottomInfo<String>> bottomView = view.findViewById(R.id.hi_tab_item_bottom);
         bottomView.setHiTabInfo(new HiTabBottomInfo<>(
                 "煎饼", "fonts/iconfont.ttf",
-                getString(R.string.jianbing), null,
+                getString(R.string.jianbing), "bingjian",
                 "#FF91FF33", "#FFd44949"
         ));
     }
