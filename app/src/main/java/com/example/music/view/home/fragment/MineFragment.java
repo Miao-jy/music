@@ -16,6 +16,7 @@ import com.example.music.R;
 import com.example.music.db.MyDatabaseHelper;
 import com.example.music.hi.tab.bottom.HiTabBottomInfo;
 import com.example.music.hi.tab.common.IHiTabItem;
+import com.example.music.sunnyweather.WeatherMainActivity;
 
 public class MineFragment extends Fragment {
 
@@ -50,6 +51,9 @@ public class MineFragment extends Fragment {
                 getString(R.string.jianbing), "bingjian",
                 "#FF91FF33", "#FFd44949"
         ));
+        view.findViewById(R.id.mineFragmentText).setOnClickListener(v -> {
+            WeatherMainActivity.start(getActivity());
+        });
         Context context = getContext();
         if (context != null) {
             MyDatabaseHelper dbHelper = new MyDatabaseHelper(context, "photo", 1);

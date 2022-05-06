@@ -30,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.leafloading.LeafLoadingActivity"></activity>
+        <activity android:name=".view.leafloading.LeafLoadingActivity" />
+        <activity android:name=".sunnyweather.WeatherMainActivity"/>
     </application>
 
 </manifest>
