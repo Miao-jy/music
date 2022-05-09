@@ -9,14 +9,14 @@ import com.example.music.sunnyweather.logic.model.Location
 class WeatherViewModel : ViewModel() {
     private val locationLiveData = MutableLiveData<Location>()
 
-    val locationLng = ""
+    var locationLng = ""
 
-    val locationLat = ""
+    var locationLat = ""
 
-    val placeName = ""
+    var placeName = ""
 
-    val weatherLiveData = Transformations.switchMap(locationLiveData) {
-        Repository.refreshWeather(it.lng, it.lat)
+    val weatherLiveData = Transformations.switchMap(locationLiveData) { location ->
+        Repository.refreshWeather(location.lng, location.lat, placeName)
     }
 
     fun refreshWeather(lng: String, lat: String) {

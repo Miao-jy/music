@@ -23,7 +23,8 @@ object Repository {
         }
     }
 
-    fun refreshWeather(lng: String, lat: String) = fire(Dispatchers.IO) {
+    // TODO 不懂协程fire的意思
+    fun refreshWeather(lng: String, lat: String, placeName: String) = fire(Dispatchers.IO) {
         coroutineScope {
             val deferredRealtime = async {
                 SunnyWeatherNetwork.getRealtimeWeather(lng, lat)

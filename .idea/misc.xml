@@ -11,10 +11,13 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login_layout.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/layout/activity_weather.xml" value="0.4041666666666667" />
         <entry key="app/src/main/res/layout/activity_weather_main.xml" value="0.3389175257731959" />
         <entry key="app/src/main/res/layout/category_fragment.xml" value="0.401268115942029" />
         <entry key="app/src/main/res/layout/content_hi_bottom_layout.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/favorite_fragment.xml" value="0.401268115942029" />
+        <entry key="app/src/main/res/layout/forecast.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/layout/forecast_item.xml" value="0.4041666666666667" />
         <entry key="app/src/main/res/layout/fragment_discory_layout(更多IT教程 微信535950311)_更多IT资源微信1215501310.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/fragment_discory_layout.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/fragment_friend_layout.xml" value="0.23020833333333332" />
@@ -26,6 +29,8 @@
         <entry key="app/src/main/res/layout/homepage_fragment.xml" value="0.401268115942029" />
         <entry key="app/src/main/res/layout/item_friend_list_picture_layout.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/leaf_loading_layout.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/life_index.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/layout/now.xml" value="0.4041666666666667" />
         <entry key="app/src/main/res/layout/place_item.xml" value="0.4041666666666667" />
         <entry key="app/src/main/res/layout/profile_fragment.xml" value="0.401268115942029" />
         <entry key="app/src/main/res/layout/recommended_fragment.xml" value="0.401268115942029" />

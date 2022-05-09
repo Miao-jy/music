@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.music.R
 import com.example.music.sunnyweather.logic.model.Place
+import com.example.music.sunnyweather.ui.weather.WeatherActivity
 
 class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: List<Place>) : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
@@ -19,16 +20,16 @@ class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: L
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.place_item, parent, false)
         val holder = ViewHolder(view)
-        /*holder.itemView.setOnClickListener {
+        holder.itemView.setOnClickListener {
             val position = holder.adapterPosition
             val place = placeList[position]
             val activity = fragment.activity
             if (activity is WeatherActivity) {
-                activity.drawerLayout.closeDrawers()
+//                activity.drawerLayout.closeDrawers()
                 activity.viewModel.locationLng = place.location.lng
                 activity.viewModel.locationLat = place.location.lat
                 activity.viewModel.placeName = place.name
-                activity.refreshWeather()
+//                activity.refreshWeather()
             } else {
                 val intent = Intent(parent.context, WeatherActivity::class.java).apply {
                     putExtra("location_lng", place.location.lng)
@@ -38,8 +39,8 @@ class PlaceAdapter(private val fragment: PlaceFragment, private val placeList: L
                 fragment.startActivity(intent)
                 activity?.finish()
             }
-            fragment.viewModel.savePlace(place)
-        }*/
+//            fragment.viewModel.savePlace(place)
+        }
         return holder
     }
 
