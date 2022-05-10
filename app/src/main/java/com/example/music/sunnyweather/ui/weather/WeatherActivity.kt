@@ -44,12 +44,15 @@ class WeatherActivity : BaseActivity() {
                 Toast.makeText(this, "无法成功获取天气信息", Toast.LENGTH_SHORT).show()
                 result.exceptionOrNull()?.printStackTrace()
             }
+            swipeRefresh.isRefreshing = false
         })
-        this.refreshWeather()
+        refreshWeather()
+        swipeRefresh.setOnRefreshListener { refreshWeather() }
     }
 
     fun refreshWeather() {
         viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
+        swipeRefresh.isRefreshing = true
     }
 
     private fun showWeatherInfo(weather: Weather) {
